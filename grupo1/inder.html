@@ -486,6 +486,53 @@
         .gallery-item a{
             text-decoration: none;
         }
+
+        @media (max-width: 768px) {
+            .carousel-historia {
+                position: relative;
+                gap: 0;
+            }
+
+            .carousel-viewport {
+                min-height: 0;
+                width: 100%;
+            }
+
+            .carousel-slide {
+                grid-template-columns: 1fr;
+            }
+
+            .carousel-image {
+                min-height: 0;
+                height: clamp(220px, 70vw, 340px);
+            }
+
+            .carousel-text {
+                padding: 22px;
+            }
+
+            .carousel-btn {
+                position: absolute;
+                z-index: 1;
+                top: clamp(110px, 35vw, 170px);
+            }
+
+            .carousel-btn.prev {
+                left: 12px;
+            }
+
+            .carousel-btn.next {
+                right: 12px;
+            }
+
+            .carousel-btn:hover {
+                transform: translateY(-50%) scale(1.08);
+            }
+
+            .carousel-btn {
+                transform: translateY(-50%);
+            }
+        }
     </style>
 </head>
 <body>
