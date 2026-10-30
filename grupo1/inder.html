@@ -392,7 +392,7 @@
         }
 
         .img-1 {
-            background-image: url('imagenes/agosti_videla_massera-1024x675.jpg');
+            background-image: url('Imagenes/agosti_videla_massera-1024x675.jpg');
         }
 
         .img-2 {
@@ -496,43 +496,46 @@
             }
 
             .carousel-viewport {
-                height: clamp(320px, 43svh, 400px);
-                min-height: 320px;
+                height: auto;
+                min-height: 0;
                 width: 100%;
             }
 
             .carousel-slide {
-                grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+                grid-template-columns: 1fr;
             }
 
             .carousel-image {
+                width: 100%;
+                aspect-ratio: 16 / 9;
                 min-height: 0;
-                height: 100%;
+                height: auto;
             }
 
             .carousel-text {
                 min-width: 0;
-                padding: 14px;
+                padding: 16px;
             }
 
             .carousel-text span {
                 padding: 4px 8px;
-                font-size: 0.6em;
+                font-size: 0.65em;
             }
 
             .carousel-text h3 {
-                font-size: clamp(1.1rem, 4vw, 1.45rem);
+                font-size: clamp(1.15rem, 4vw, 1.5rem);
             }
 
             .carousel-text p {
-                font-size: 0.82rem;
-                line-height: 1.45;
+                font-size: 0.9rem;
+                line-height: 1.5;
             }
 
             .carousel-btn {
                 position: absolute;
                 z-index: 1;
-                top: 50%;
+                top: calc((100vw - 24px) * 0.28125);
+                transform: translateY(-50%);
             }
 
             .carousel-btn.prev {
@@ -541,10 +544,6 @@
 
             .carousel-btn.next {
                 right: 12px;
-            }
-
-            .carousel-btn {
-                transform: translateY(-50%);
             }
 
             .carousel-btn:hover {
