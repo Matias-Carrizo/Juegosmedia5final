@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memoria, Verdad y Justicia</title>
+    <!-- Asegurate de enlazar tu archivo CSS aquí -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="container nav-wrap">
+            <div class="logo">Nunca Más</div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#homenaje">Homenaje</a></li>
+                <li><a href="#galeria">Galería</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- 1. INICIO / PRESENTACIÓN (Separado) -->
+    <header id="inicio" class="hero">
+        <div class="container hero-content">
+            <span class="eyebrow">Memoria, Verdad y Justicia</span>
+            <h1>Un pueblo con memoria es un pueblo con futuro</h1>
+            <p class="lead">Mantenemos vivo el recuerdo para que la historia no se repita. 30.000 compañeros detenidos desaparecidos, presentes. Ahora y siempre.</p>
+        </div>
+    </header>
+
+    <!-- 2. CARTA CON HOMENAJE EN LA PÁGINA PRINCIPAL -->
+    <main class="container">
+        <section id="homenaje" class="section">
+            <div class="remembrance-card">
+                <h2>Carta a nuestros Desaparecidos</h2>
+                <p>
+                    A quienes les arrebataron la voz, hoy les prestamos la nuestra. Esta carta es un homenaje a los sueños interrumpidos, a las familias que aún buscan, a las Madres y Abuelas que nos enseñaron que el amor es más fuerte que el terror y que la lucha por la identidad no termina.
+                </p>
+                <br>
+                <p>
+                    No son solo nombres en una lista; son historias, son sonrisas, son ideales de un país más justo. Plantamos memoria en cada esquina, en cada plaza y en cada escuela, sabiendo que mientras haya alguien que los recuerde, nunca desaparecerán del todo.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. GALERÍA CONVERTIDA EN CARRUSEL -->
+        <section id="galeria" class="carousel-section">
+            <div class="section-heading">
+                <h2>Archivo Visual</h2>
+                <p class="section-intro">Recorré las imágenes de nuestra historia.</p>
+            </div>
+            
+            <div class="mini-carousel">
+                <div class="mini-track" id="track">
+                    <!-- Foto 1 -->
+                    <figure class="mini-slide">
+                        <!-- Reemplaza el src con tus fotos -->
+                        <img src="nunca-mas.jpg" alt="Pañuelos Blancos">
+                        <figcaption>Nunca más!!!</figcaption>
+                    </figure>
+                    <!-- Foto 2 -->
+                    <figure class="mini-slide">
+                        <img src="abuelas.jpg" alt="Abuelas de Plaza de Mayo">
+                        <figcaption>Abuelas de Plaza de Mayo</figcaption>
+                    </figure>
+                    <!-- Foto 3 -->
+                    <figure class="mini-slide">
+                        <img src="NOCHE.jpg" alt="Videla y sus colaboradores">
+                        <figcaption>Dictadura y censura</figcaption>
+                    </figure>
+                     <!-- Foto 4 -->
+                    <figure class="mini-slide">
+                        <img src="represion.jpg" alt="Represion y censura">
+                        <figcaption>Represión</figcaption>
+                    </figure>
+                     <!-- Foto 5 -->
+                    <figure class="mini-slide">
+                        <img src="videla y compañia.jpg" alt="Videla y sus colaboradores">
+                        <figcaption>Videla y compañia</figcaption>
+                    </figure>
+                </div>
+
+                <!-- Botones del carrusel -->
+                <button class="mini-btn prev-mini" id="btnPrev">&#10094;</button>
+                <button class="mini-btn next-mini" id="btnNext">&#10095;</button>
+
+                <!-- Puntos del carrusel -->
+                <div class="mini-dots">
+                    <div class="mini-dot active" onclick="moverCarrusel(0)"></div>
+                    <div class="mini-dot" onclick="moverCarrusel(1)"></div>
+                    <div class="mini-dot" onclick="moverCarrusel(2)"></div>
+                    <div class="mini-dot" onclick="moverCarrusel(3)"></div>
+                    <div class="mini-dot" onclick="moverCarrusel(4)"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>Nunca Más. Memoria, Verdad y Justicia.</p>
+        </div>
+    </footer>
+
+    <!-- SCRIPT PARA HACER FUNCIONAR EL CARRUSEL -->
+    <script>
+        const track = document.getElementById('track');
+        const slides = Array.from(track.children);
+        const nextButton = document.getElementById('btnNext');
+        const prevButton = document.getElementById('btnPrev');
+        const dots = Array.from(document.querySelectorAll('.mini-dot'));
+        
+        let currentIndex = 0;
+
+        function updateCarousel(index) {
+            // Mueve la pista (track) hacia los lados
+            track.style.transform = `translateX(-${index * 100}%)`;
+            
+            // Actualiza los puntos (dots)
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[index].classList.add('active');
+            
+            currentIndex = index;
+        }
+
+        nextButton.addEventListener('click', e => {
+            let nextIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
+            updateCarousel(nextIndex);
+        });
+
+        prevButton.addEventListener('click', e => {
+            let prevIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
+            updateCarousel(prevIndex);
+        });
+
+        function moverCarrusel(index) {
+            updateCarousel(index);
+        }
+    </script>
+</body>
+</html>
