@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101827">
+  <meta name="description" content="Un espacio para conocer y mantener viva la memoria.">
+  <title>Memoria que permanece</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #101827;
+      color: #f5f3ee;
+      font-synthesis: none;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-width: 320px;
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      overflow-x: hidden;
+      background:
+        radial-gradient(ellipse at 15% 15%, rgba(73, 113, 132, 0.2), transparent 38rem),
+        radial-gradient(ellipse at 90% 85%, rgba(192, 111, 83, 0.16), transparent 34rem),
+        #101827;
+    }
+
+    main {
+      width: min(100% - 2rem, 760px);
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      margin: 0 0 1.5rem;
+      color: #c5a58c;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before,
+    .eyebrow::after {
+      width: 1.5rem;
+      height: 1px;
+      background: currentColor;
+      content: "";
+    }
+
+    h1 {
+      max-width: 700px;
+      margin: 0 auto;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3rem, 9vw, 5.75rem);
+      font-weight: 400;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+    }
+
+    h1 span {
+      color: #c5a58c;
+      font-style: italic;
+    }
+
+    .intro {
+      max-width: 490px;
+      margin: 1.5rem auto 2.75rem;
+      color: #aab3c0;
+      font-size: 1rem;
+      line-height: 1.75;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .link-card {
+      display: flex;
+      min-width: min(100%, 245px);
+      min-height: 72px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1rem 1.25rem;
+      border: 1px solid rgba(220, 226, 232, 0.18);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.045);
+      color: #f5f3ee;
+      font-size: 0.95rem;
+      font-weight: 650;
+      text-align: left;
+      text-decoration: none;
+      transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    }
+
+    .link-card:hover {
+      transform: translateY(-3px);
+      border-color: #c5a58c;
+      background: rgba(255, 255, 255, 0.09);
+    }
+
+    .link-card:focus-visible {
+      outline: 3px solid #e6c6ab;
+      outline-offset: 4px;
+    }
+
+    .arrow {
+      color: #c5a58c;
+      font-size: 1.25rem;
+      transition: transform 180ms ease;
+    }
+
+    .link-card:hover .arrow {
+      transform: translateX(4px);
+    }
+
+    footer {
+      margin-top: 4.5rem;
+      color: #748092;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+    }
+
+    @media (max-width: 560px) {
+      main {
+        padding: 3.5rem 0;
+      }
+
+      .links {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .link-card {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="eyebrow">Memoria histórica</p>
+    <h1>Recordar para <span>construir</span></h1>
+    <p class="intro">
+      Dos recorridos para conocer nuestra historia, honrar la memoria y mantener viva la búsqueda de verdad.
+    </p>
+    <nav class="links" aria-label="Explorar los proyectos">
+      <a class="link-card" href="grupo1/inder.html">
+        <span>Explorar proyecto 1</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="link-card" href="grupo2/pagina.html">
+        <span>Explorar proyecto 2</span>
+        <span class="arrow" aria-hidden="true">→</span>
+      </a>
+    </nav>
+    <footer>ARGENTINA · MEMORIA, VERDAD Y JUSTICIA</footer>
+  </main>
+</body>
+</html>
