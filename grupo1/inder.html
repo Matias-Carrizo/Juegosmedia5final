@@ -491,6 +491,8 @@
             .carousel-historia {
                 position: relative;
                 gap: 0;
+                width: calc(100vw - 24px);
+                margin-left: calc((100% - 100vw + 24px) / 2);
             }
 
             .carousel-viewport {
@@ -504,7 +506,7 @@
 
             .carousel-image {
                 min-height: 0;
-                height: clamp(220px, 70vw, 340px);
+                height: clamp(320px, 58svh, 520px);
             }
 
             .carousel-text {
@@ -514,7 +516,7 @@
             .carousel-btn {
                 position: absolute;
                 z-index: 1;
-                top: clamp(110px, 35vw, 170px);
+                top: clamp(160px, 29svh, 260px);
             }
 
             .carousel-btn.prev {
